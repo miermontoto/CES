@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<<<<<<< HEAD
 <archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ModeloAjustado.jsimg" timestamp="Sun Nov 13 20:03:25 CET 2022" xsi:noNamespaceSchemaLocation="Archive.xsd">
     <sim disableStatisticStop="false" logDecimalSeparator="." logDelimiter=";" logPath="/home/mier/JMT/" logReplaceMode="0" maxSamples="1000000" name="ModeloAjustado.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+=======
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="modelado6.jsimg" timestamp="Wed Nov 09 10:36:16 CET 2022" xsi:noNamespaceSchemaLocation="Archive.xsd">
+    <sim disableStatisticStop="false" logDecimalSeparator="." logDelimiter=";" logPath="/home/mier/JMT/" logReplaceMode="0" maxSamples="1000000" name="modelado6.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+>>>>>>> 0f7d2bf09f433a5a879b980c8843b8093778cc4a
         <userClass customers="5" name="Peticiones" priority="0" referenceSource="Usuarios" type="closed"/>
         <node name="Usuarios">
             <section className="Queue">
@@ -137,7 +142,11 @@
                         <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
                         <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
                             <subParameter classPath="java.lang.Double" name="lambda">
+<<<<<<< HEAD
                                 <value>859.0105916005945</value>
+=======
+                                <value>939.7348068375105</value>
+>>>>>>> 0f7d2bf09f433a5a879b980c8843b8093778cc4a
                             </subParameter>
                         </subParameter>
                     </subParameter>
@@ -202,7 +211,11 @@
                         <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
                         <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
                             <subParameter classPath="java.lang.Double" name="lambda">
+<<<<<<< HEAD
                                 <value>2343.2923257176335</value>
+=======
+                                <value>1478.043661409758</value>
+>>>>>>> 0f7d2bf09f433a5a879b980c8843b8093778cc4a
                             </subParameter>
                         </subParameter>
                     </subParameter>
