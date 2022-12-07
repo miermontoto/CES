@@ -15,5 +15,5 @@
 - análisis agregación
 	- cinco gráficas
 	- comparación en el informe
-		- la productividad no sube, saturo antes, la suma de las dos productividades da la agregada
+		- la productividad no sube, saturo antes, la suma de las dos productividades da la 		agregada
 		- el tiempo de respuesta es el mismo para todos
