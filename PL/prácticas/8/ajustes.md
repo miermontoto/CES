@@ -14,7 +14,7 @@
     - Fuente de alimentación para la cabina (Fuente 1), +42€
 - se mejora la cabina, que es lo que peor disponibilidad tiene (0.9998807502213262 => 0.9999771776899687)
     - se duplica la controladora, +80€
-    - se duplica la alimentación, +42€
+    - se duplica la alimentación, +42€ 
 - se revierten algunos cambios anteriores para reducir el presupuesto (0.9999771776899687 => 0.9999568777376259)
     - se revierte el cambio de sistema operativo y PSU, -576€ (nuevo so: enterprise ed.)
     - se elimina la controladora duplicada, -80€

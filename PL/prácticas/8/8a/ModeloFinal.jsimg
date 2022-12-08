@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Tarea 2 (modelado ajustado).jsimg" timestamp="Wed Dec 07 09:39:13 CET 2022" xsi:noNamespaceSchemaLocation="Archive.xsd">
-    <sim disableStatisticStop="false" logDecimalSeparator="." logDelimiter=";" logPath="/home/mier/JMT/" logReplaceMode="0" maxSamples="1000000" name="Tarea 2 (modelado ajustado).jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
-        <userClass customers="5" name="Peticiones" priority="0" referenceSource="Usuarios" type="closed"/>
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Modelado.jsimg" timestamp="Thu Dec 08 17:17:15 CET 2022" xsi:noNamespaceSchemaLocation="Archive.xsd">
+    <sim disableStatisticStop="false" logDecimalSeparator="." logDelimiter=";" logPath="/home/mier/JMT/" logReplaceMode="0" maxSamples="1000000" name="Modelado.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+        <userClass customers="660" name="Peticiones" priority="0" referenceSource="Usuarios" type="closed"/>
         <node name="Usuarios">
             <section className="Queue">
                 <parameter classPath="java.lang.Integer" name="size">
@@ -223,7 +223,7 @@
         <connection source="Disco" target="CPU"/>
         <preload>
             <stationPopulations stationName="Usuarios">
-                <classPopulation population="5" refClass="Peticiones"/>
+                <classPopulation population="660" refClass="Peticiones"/>
             </stationPopulations>
         </preload>
     </sim>
