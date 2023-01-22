@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Sistema.jsimg" timestamp="Wed Dec 14 11:34:57 CET 2022" xsi:noNamespaceSchemaLocation="Archive.xsd">
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Sistema.jsimg" timestamp="Thu Jan 19 10:51:39 CET 2023" xsi:noNamespaceSchemaLocation="Archive.xsd">
     <sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="C:\Users\Manuel Garcia Vazque/JMT/" logReplaceMode="0" maxSamples="1000000" name="Sistema.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
         <userClass customers="200" name="C. Interna" priority="0" referenceSource="Usuarios" type="closed"/>
         <userClass name="C. Externa" priority="0" referenceSource="EntradaInternet" type="open"/>
@@ -138,7 +138,7 @@
                             </subParameter>
                             <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
                                 <subParameter classPath="java.lang.String" name="stationName">
-                                    <value>Sink 1</value>
+                                    <value>SalidaInternet</value>
                                 </subParameter>
                                 <subParameter classPath="java.lang.Double" name="probability">
                                     <value>0.0</value>
@@ -167,7 +167,7 @@
                             </subParameter>
                             <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
                                 <subParameter classPath="java.lang.String" name="stationName">
-                                    <value>Sink 1</value>
+                                    <value>SalidaInternet</value>
                                 </subParameter>
                                 <subParameter classPath="java.lang.Double" name="probability">
                                     <value>0.5</value>
@@ -378,7 +378,7 @@
                 </parameter>
             </section>
         </node>
-        <node name="Sink 1">
+        <node name="SalidaInternet">
             <section className="JobSink"/>
         </node>
         <measure alpha="0.01" name="Red_Residence Time" nodeType="station" precision="0.03" referenceNode="Red" referenceUserClass="" type="Residence Time" verbose="false"/>
@@ -393,7 +393,7 @@
         <connection source="Usuarios" target="Red"/>
         <connection source="Red" target="Usuarios"/>
         <connection source="Red" target="CPU"/>
-        <connection source="Red" target="Sink 1"/>
+        <connection source="Red" target="SalidaInternet"/>
         <connection source="CPU" target="Red"/>
         <connection source="CPU" target="Disco"/>
         <connection source="Disco" target="CPU"/>
@@ -422,59 +422,61 @@
         <station name="EntradaInternet">
             <position rotate="false" x="189.0" y="17.0"/>
         </station>
-        <station name="Sink 1">
+        <station name="SalidaInternet">
             <position rotate="false" x="341.0" y="317.0"/>
         </station>
     </jmodel>
     <results pollingInterval="1.0" xsi:noNamespaceSchemaLocation="Results.xsd">
-        <measure alpha="0.99" analyzedSamples="56320" finalValue="0.00239831300054929" name="Red_Residence Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="Red" state="1" type="5">
-            <sample lastIntervalAvgValue="0.0011929909025454695" lowerBound="0.002254399522669728" meanValue="0.002410176489919068" simulationTime="121.73815251023949" upperBound="0.0025659534571684083"/>
-            <sample lastIntervalAvgValue="0.0012102675580532764" lowerBound="0.0023414043434474264" meanValue="0.00239831300054929" simulationTime="340.91670386728737" upperBound="0.0024552216576511528"/>
+        <measure alpha="0.99" analyzedSamples="71680" finalValue="0.00241093203850563" name="Red_Residence Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="Red" state="1" type="5">
+            <sample lastIntervalAvgValue="0.0011950324992182002" lowerBound="0.0023407379595876275" meanValue="0.0023946450410346235" simulationTime="361.0131019784837" upperBound="0.002448552122481619"/>
+            <sample lastIntervalAvgValue="0.001225303861637649" lowerBound="0.0023739299094846134" meanValue="0.00241093203850563" simulationTime="431.193928984331" upperBound="0.0024479341675266468"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="61440" finalValue="0.029736456944997186" name="CPU_Residence Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="CPU" state="1" type="5">
-            <sample lastIntervalAvgValue="0.009155837901510158" lowerBound="0.028998230125855874" meanValue="0.03068001343169638" simulationTime="121.73812287534592" upperBound="0.03236179673753688"/>
-            <sample lastIntervalAvgValue="0.008976669699747234" lowerBound="0.028860807398755055" meanValue="0.029736456944997186" simulationTime="222.3721694399565" upperBound="0.030612106491239313"/>
+        <measure alpha="0.99" analyzedSamples="81920" finalValue="0.02952601694253149" name="CPU_Residence Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="CPU" state="1" type="5">
+            <sample lastIntervalAvgValue="0.008903140079590324" lowerBound="0.028839793000306136" meanValue="0.02952601694253149" simulationTime="300.3058626967564" upperBound="0.03021224088475684"/>
+            <sample lastIntervalAvgValue="0.008903140079590324" lowerBound="0.028839793000306136" meanValue="0.02952601694253149" simulationTime="300.3058626967564" upperBound="0.03021224088475684"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="1000001" finalValue="0.1963513573625192" name="Disco_Residence Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="Disco" state="2" type="5">
-            <sample lastIntervalAvgValue="0.09242270244860333" meanValue="0.21709591235188225" simulationTime="121.72340361134017"/>
-            <sample lastIntervalAvgValue="0.07915766808175786" lowerBound="0.1597848077165" meanValue="0.1887998692371958" simulationTime="1254.973744759878" upperBound="0.2178149307578916"/>
-            <sample lastIntervalAvgValue="0.08512004582735039" lowerBound="0.163463568220169" meanValue="0.19171371263286677" simulationTime="2465.9327232829723" upperBound="0.21996385704556456"/>
-            <sample lastIntervalAvgValue="0.07855203323356981" lowerBound="0.1635230550221656" meanValue="0.1917834800788341" simulationTime="3426.5207886109242" upperBound="0.22004390513550262"/>
-            <sample lastIntervalAvgValue="0.09365290779175339" lowerBound="0.17577174368596035" meanValue="0.19626327713117206" simulationTime="4340.097876593708" upperBound="0.21675481057638377"/>
-            <sample lastIntervalAvgValue="0.0809511354472512" lowerBound="0.1758506276018638" meanValue="0.1963513573625192" simulationTime="5188.696723165863" upperBound="0.2168520871231746"/>
+        <measure alpha="0.99" analyzedSamples="1000001" finalValue="0.1919517494984444" name="Disco_Residence Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="Disco" state="2" type="5">
+            <sample lastIntervalAvgValue="0.09371500690499818" lowerBound="0.16734619793779726" meanValue="0.24595037043639073" simulationTime="361.00911692626323" upperBound="0.3245545429349842"/>
+            <sample lastIntervalAvgValue="0.08004935153724649" lowerBound="0.16008807979961812" meanValue="0.19387839830421383" simulationTime="1694.1007820619143" upperBound="0.22766871680880954"/>
+            <sample lastIntervalAvgValue="0.08439681742321906" lowerBound="0.167504668206197" meanValue="0.19125773603389654" simulationTime="3001.1434339958596" upperBound="0.21501080386159607"/>
+            <sample lastIntervalAvgValue="0.0813729357532195" lowerBound="0.16743148675581493" meanValue="0.1911741770580803" simulationTime="4254.0708871477245" upperBound="0.21491686736034563"/>
+            <sample lastIntervalAvgValue="0.08546970049128233" lowerBound="0.17531657350273996" meanValue="0.1919517494984444" simulationTime="5225.629851745571" upperBound="0.20858692549414884"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="71680" finalValue="83.5598665396127" name="System Throughput" nodeType="station" precision="0.03" referenceClass="" referenceStation="" state="1" type="9">
-            <sample lastIntervalAvgValue="83.12407029370341" lowerBound="79.1451333560979" meanValue="83.04897013150992" simulationTime="121.69760172062074" upperBound="87.3579020411536"/>
-            <sample lastIntervalAvgValue="83.54486305920845" lowerBound="82.13789451195191" meanValue="83.5598665396127" simulationTime="864.4602052815624" upperBound="85.03194031635138"/>
+        <measure alpha="0.99" analyzedSamples="51200" finalValue="83.30848497889276" name="System Throughput" nodeType="station" precision="0.03" referenceClass="" referenceStation="" state="1" type="9">
+            <sample lastIntervalAvgValue="82.57402843192347" lowerBound="79.87660069204517" meanValue="82.58474502584042" simulationTime="361.0093944317646" upperBound="85.48296820995293"/>
+            <sample lastIntervalAvgValue="84.420347120881" lowerBound="81.64587442548529" meanValue="83.30848497889276" simulationTime="614.3843298531007" upperBound="85.04021683889566"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="61440" finalValue="73.43210552084426" name="C. Interna_System Throughput" nodeType="station" precision="0.03" referenceClass="C. Interna" referenceStation="" state="1" type="9">
-            <sample lastIntervalAvgValue="73.14030740255576" lowerBound="67.22535496969167" meanValue="72.72069139427323" simulationTime="121.69760172062074" upperBound="79.19444069256112"/>
-            <sample lastIntervalAvgValue="73.53635146425361" lowerBound="72.25173629617909" meanValue="73.43210552084426" simulationTime="841.7768407040809" upperBound="74.65168241982178"/>
+        <measure alpha="0.99" analyzedSamples="61440" finalValue="73.46342911143341" name="C. Interna_System Throughput" nodeType="station" precision="0.03" referenceClass="C. Interna" referenceStation="" state="1" type="9">
+            <sample lastIntervalAvgValue="72.3194476451076" lowerBound="69.8273789159228" meanValue="72.57712600468497" simulationTime="361.0093944317646" upperBound="75.55231662346439"/>
+            <sample lastIntervalAvgValue="74.16920278519594" lowerBound="72.16186415435904" meanValue="73.46342911143341" simulationTime="842.3277672797126" upperBound="74.81280846829652"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="61440" finalValue="10.059016962873555" name="C. Externa_System Throughput" nodeType="station" precision="0.03" referenceClass="C. Externa" referenceStation="" state="1" type="9">
-            <sample lastIntervalAvgValue="9.9857933575347" meanValue="9.9857933575347" simulationTime="121.67285627668548"/>
-            <sample lastIntervalAvgValue="9.91088208692514" lowerBound="8.629695469884926" meanValue="9.951555732078008" simulationTime="1254.9725869654135" upperBound="11.751619047050946"/>
-            <sample lastIntervalAvgValue="10.117912959029583" lowerBound="9.538373762909604" meanValue="9.895138563989406" simulationTime="2465.8942513058723" upperBound="10.279628597938228"/>
-            <sample lastIntervalAvgValue="9.995221499928723" lowerBound="9.615708205518176" meanValue="10.023726874489233" simulationTime="3426.453254432363" upperBound="10.467906457350384"/>
-            <sample lastIntervalAvgValue="10.302371591826084" lowerBound="9.615708205518176" meanValue="10.023726874489233" simulationTime="4340.029309820182" upperBound="10.467906457350384"/>
-            <sample lastIntervalAvgValue="9.931618360680721" lowerBound="9.615708205518176" meanValue="10.023726874489233" simulationTime="5258.006588940592" upperBound="10.467906457350384"/>
-            <sample lastIntervalAvgValue="9.997237290317905" lowerBound="9.856449305234737" meanValue="10.059016962873555" simulationTime="6213.370528261101" upperBound="10.270085585703198"/>
+        <measure alpha="0.99" analyzedSamples="81920" finalValue="10.097880542175945" name="C. Externa_System Throughput" nodeType="station" precision="0.03" referenceClass="C. Externa" referenceStation="" state="1" type="9">
+            <sample lastIntervalAvgValue="10.25615224169248" lowerBound="9.025802028324092" meanValue="10.269487866193645" simulationTime="360.9540803178535" upperBound="11.910688833743354"/>
+            <sample lastIntervalAvgValue="9.90294281006711" lowerBound="9.576112511615177" meanValue="10.013707112131755" simulationTime="1694.0931535415364" upperBound="10.493209828661039"/>
+            <sample lastIntervalAvgValue="10.132016847720527" lowerBound="9.622247152919872" meanValue="9.987726611440614" simulationTime="3001.137960023414" upperBound="10.382066086548235"/>
+            <sample lastIntervalAvgValue="9.997337409308942" lowerBound="9.806552479536572" meanValue="10.027403310166811" simulationTime="4254.0715649587155" upperBound="10.25843077494999"/>
+            <sample lastIntervalAvgValue="10.239451202710923" lowerBound="9.806552479536572" meanValue="10.027403310166811" simulationTime="5526.503040246233" upperBound="10.25843077494999"/>
+            <sample lastIntervalAvgValue="10.111004087593065" lowerBound="9.806552479536572" meanValue="10.027403310166811" simulationTime="6854.659955589424" upperBound="10.25843077494999"/>
+            <sample lastIntervalAvgValue="10.055546919261776" lowerBound="9.960989813583959" meanValue="10.097880542175945" simulationTime="8127.688673249644" upperBound="10.238586189858696"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="58880" finalValue="0.5600236093956027" name="CPU_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="CPU" state="1" type="2">
-            <sample lastIntervalAvgValue="0.5570212830259865" lowerBound="0.5461622558826498" meanValue="0.5600236093956027" simulationTime="112.17717304585173" upperBound="0.5738849629085556"/>
-            <sample lastIntervalAvgValue="0.5570212830259865" lowerBound="0.5461622558826498" meanValue="0.5600236093956027" simulationTime="112.17717304585173" upperBound="0.5738849629085556"/>
+        <measure alpha="0.99" analyzedSamples="184320" finalValue="0.5509639411406013" name="CPU_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="CPU" state="1" type="2">
+            <sample lastIntervalAvgValue="0.5511381410135406" lowerBound="0.5405611190859222" meanValue="0.5509639411406013" simulationTime="337.56438621702534" upperBound="0.5613667631952804"/>
+            <sample lastIntervalAvgValue="0.5511381410135406" lowerBound="0.5405611190859222" meanValue="0.5509639411406013" simulationTime="337.56438621702534" upperBound="0.5613667631952804"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="51200" finalValue="0.49251223724447873" name="CPU_C. Interna_Utilization" nodeType="station" precision="0.03" referenceClass="C. Interna" referenceStation="CPU" state="1" type="2">
-            <sample lastIntervalAvgValue="0.4896520001306772" lowerBound="0.47835695848615656" meanValue="0.49251223724447873" simulationTime="111.40966987152437" upperBound="0.5066675160028009"/>
-            <sample lastIntervalAvgValue="0.4896520001306772" lowerBound="0.47835695848615656" meanValue="0.49251223724447873" simulationTime="111.40966987152437" upperBound="0.5066675160028009"/>
+        <measure alpha="0.99" analyzedSamples="133120" finalValue="0.47909787278667776" name="CPU_C. Interna_Utilization" nodeType="station" precision="0.03" referenceClass="C. Interna" referenceStation="CPU" state="1" type="2">
+            <sample lastIntervalAvgValue="0.4798602984443145" lowerBound="0.4663636995799852" meanValue="0.47909787278667776" simulationTime="280.14374825001676" upperBound="0.4918320459933703"/>
+            <sample lastIntervalAvgValue="0.4798602984443145" lowerBound="0.4663636995799852" meanValue="0.47909787278667776" simulationTime="280.14374825001676" upperBound="0.4918320459933703"/>
         </measure>
-        <measure alpha="0.99" analyzedSamples="327680" finalValue="0.06729061843717227" name="CPU_C. Externa_Utilization" nodeType="station" precision="0.03" referenceClass="C. Externa" referenceStation="CPU" state="1" type="2">
-            <sample lastIntervalAvgValue="0.06754991525950937" lowerBound="0.03731632928191342" meanValue="0.06461840856357981" simulationTime="121.73497353686608" upperBound="0.0919204878452462"/>
-            <sample lastIntervalAvgValue="0.06605428544070213" lowerBound="0.06286944602984686" meanValue="0.06593490656228183" simulationTime="1254.9687475465266" upperBound="0.06900036709471681"/>
-            <sample lastIntervalAvgValue="0.06601915189136501" lowerBound="0.06286944602984686" meanValue="0.06593490656228183" simulationTime="2465.894197249644" upperBound="0.06900036709471681"/>
-            <sample lastIntervalAvgValue="0.06711957394197289" lowerBound="0.06322770655829722" meanValue="0.06580616089331091" simulationTime="3426.4621663690887" upperBound="0.0683846152283246"/>
-            <sample lastIntervalAvgValue="0.07039322887405222" lowerBound="0.06322770655829722" meanValue="0.06580616089331091" simulationTime="4340.028964050424" upperBound="0.0683846152283246"/>
-            <sample lastIntervalAvgValue="0.06514276433347149" lowerBound="0.06531249486667286" meanValue="0.06729061843717227" simulationTime="4923.804870152853" upperBound="0.06926874200767168"/>
+        <measure alpha="0.99" analyzedSamples="655360" finalValue="0.0676337670839443" name="CPU_C. Externa_Utilization" nodeType="station" precision="0.03" referenceClass="C. Externa" referenceStation="CPU" state="1" type="2">
+            <sample lastIntervalAvgValue="0.06977316323744424" lowerBound="0.06530658287940835" meanValue="0.07173380543296537" simulationTime="360.896676049732" upperBound="0.07816102798652239"/>
+            <sample lastIntervalAvgValue="0.06666659928313208" lowerBound="0.061578765625739156" meanValue="0.06588944284971102" simulationTime="1694.0925127531548" upperBound="0.07020012007368288"/>
+            <sample lastIntervalAvgValue="0.06646142190986003" lowerBound="0.06357281196683644" meanValue="0.06613402993004623" simulationTime="3001.138881350985" upperBound="0.06869524789325603"/>
+            <sample lastIntervalAvgValue="0.06655954449850089" lowerBound="0.06357281196683644" meanValue="0.06613402993004623" simulationTime="4254.064380797029" upperBound="0.06869524789325603"/>
+            <sample lastIntervalAvgValue="0.06885139548243988" lowerBound="0.0652648265278091" meanValue="0.06737862660302459" simulationTime="5526.576239891961" upperBound="0.06949242667824007"/>
+            <sample lastIntervalAvgValue="0.06698852417817867" lowerBound="0.0652648265278091" meanValue="0.06737862660302459" simulationTime="6854.658508291737" upperBound="0.06949242667824007"/>
+            <sample lastIntervalAvgValue="0.06802278409566757" lowerBound="0.0652648265278091" meanValue="0.06737862660302459" simulationTime="8162.72612195725" upperBound="0.06949242667824007"/>
+            <sample lastIntervalAvgValue="0.06676521644303136" lowerBound="0.0652648265278091" meanValue="0.06737862660302459" simulationTime="9472.301213625147" upperBound="0.06949242667824007"/>
+            <sample lastIntervalAvgValue="0.07310908054833659" lowerBound="0.06612156385952599" meanValue="0.0676337670839443" simulationTime="9789.684668997437" upperBound="0.0691459703083626"/>
         </measure>
     </results>
 </archive>
